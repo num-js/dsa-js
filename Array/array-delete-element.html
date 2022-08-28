@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-Delete-Element</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+    <div id="alertMessage"></div>
+
+    <div align="center">
+        <h3>Array-Delete-Element</h3>
+        <input id="position" type="number" placeholder="Enter Position to Delete" />
+        <button onclick="deleteElement()">Delete</button>
+
+        <div id="dataContainer">
+        </div>
+    </div>
+
+    <script>
+        let arrData = ["Num", "Saheb", "Ujjual", "Ayush", "Gopal"];
+        console.log("Initial Array: ", arrData);
+
+        const renderData = () => {
+            let dataContainer = document.getElementById("dataContainer");
+            dataContainer.innerHTML = "";
+            arrData.forEach(data => {
+                let elementHtml = `<span class="single-element"> ${data} </span>`;
+                dataContainer.innerHTML += elementHtml;
+            });
+        }
+        renderData();
+
+
+        const deleteElement = () => {
+            const position = parseInt(document.getElementById("position").value);
+            if (position > arrData.length || position < 0) {
+                console.error("Position is not available.");
+                errorHandler("Position is not available.")
+                return false;
+            }
+            console.log("Deleting Position of : ", position);
+
+            deleteElementWithPosition(arrData, position);
+
+            console.log("After Delete Element: ", arrData);
+            renderData();
+        }
+    </script>
+    <script src="./array-delete-element.js"></script>
+    <script src="../zUtils/errorHandler.js"></script>
+</body>
+
+</html>
