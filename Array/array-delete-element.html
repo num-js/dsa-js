@@ -21,20 +21,12 @@
         </div>
     </div>
 
+    <script src="../zUtils/renderArrayData.js"></script>
+
     <script>
         let arrData = ["Num", "Saheb", "Ujjual", "Ayush", "Gopal"];
         console.log("Initial Array: ", arrData);
-
-        const renderData = () => {
-            let dataContainer = document.getElementById("dataContainer");
-            dataContainer.innerHTML = "";
-            arrData.forEach(data => {
-                let elementHtml = `<span class="single-element"> ${data} </span>`;
-                dataContainer.innerHTML += elementHtml;
-            });
-        }
-        renderData();
-
+        renderArrayData(arrData);
 
         const deleteElement = () => {
             const position = parseInt(document.getElementById("position").value);
@@ -44,14 +36,14 @@
                 return false;
             }
             console.log("Deleting Position of : ", position);
-
+            
             deleteElementWithPosition(arrData, position);
-
+            
             console.log("After Delete Element: ", arrData);
-            renderData();
+            renderArrayData(arrData);
         }
     </script>
-    <script src="./array-delete-element.js"></script>
+    <script src="../dsa-js/array-delete-element.js"></script>
     <script src="../zUtils/errorHandler.js"></script>
 </body>
 
