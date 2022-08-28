@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#dataContainer {
+    margin-top: 30px;
+}
+
+.single-element {
+    background: #104349;
+    color: white;
+    padding: 8px 22px;
+    margin: 8px;
+    border-radius: 4px;
+}
+
+#errorDiv {
+    background-color: #c50f0fc9;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
