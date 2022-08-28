@@ -5,6 +5,8 @@ body {
 
 #dataContainer {
     margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .single-element {
