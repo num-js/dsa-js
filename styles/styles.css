@@ -3,10 +3,23 @@ body {
     padding: 0;
 }
 
-#dataContainer {
+/* Global Styles Start */
+.mt-30 {
     margin-top: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Global Styles End */
+
+
+.data-container {
+    /* margin-top: 30px; */
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .single-element {
