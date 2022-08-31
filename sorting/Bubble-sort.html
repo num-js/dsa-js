@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+</head>
+
+<body>
+    <div align="center">
+        <h3>Bubble Sort</h3>
+        <span>Open console to check output</span>
+    </div>
+    <script>
+        let arr = [8, 2, 50, 6, 15, 12, 30, 20];
+
+        console.log("Un-Sorted Array: ", arr);
+
+        for (let index = 0; index < arr.length; index++) {
+
+            for (let index2 = 0; index2 < arr.length; index2++) {
+                if (arr[index2] > arr[index2 + 1]) {
+                    let temp = arr[index2];
+                    arr[index2] = arr[index2 + 1];
+                    arr[index2 + 1] = temp;
+                }
+            }
+
+        }
+
+        console.log("Sorted Array: ", arr);
+    </script>
+</body>
+
+</html>
