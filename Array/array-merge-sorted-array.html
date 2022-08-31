@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge-2-Arrays</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+    <div id="alertMessage"></div>
+
+    <div align="center">
+        <h3>Merge-2-Arrays</h3>
+        <!-- <input id="position" type="number" placeholder="Enter Position to Delete" /> -->
+
+        <div>
+            <div class="mt-30">Array 1</div>
+            <div id="dataContainer1" class="data-container"></div>
+
+            <div class="mt-30">Array 2</div>
+            <div id="dataContainer2" class="data-container"></div>
+
+            <br />
+            <button onclick="mergeArrayData()">Merge</button>
+
+            <div class="mt-30 hidden merged-array">Merged Array</div>
+            <div id="dataContainer3" class="data-container"></div>
+        </div>
+
+    </div>
+
+    <script src="../zUtils/renderArrayData.js"></script>
+
+    <script>
+        let arr1 = [1, 4, 10, 15, 20, 50];
+        let arr2 = [2, 5, 8, 18, 30, 36, 42, 48];
+        let mergedArr = [];
+        renderArrayData(arr1, "dataContainer1");
+        renderArrayData(arr2, "dataContainer2");
+
+        const mergeArrayData = () => {
+            mergeSortedArray(arr1, arr2, mergedArr);
+            document.getElementsByClassName("merged-array")[0].classList.remove("hidden");
+            renderArrayData(mergedArr, "dataContainer3");
+        }
+    </script>
+    <script src="../dsa-js/array-merge.js"></script>
+    <script src="../zUtils/errorHandler.js"></script>
+</body>
+
+</html>
