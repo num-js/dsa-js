@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion-Factorial</title>
+</head>
+
+<body>
+    <div align="center">
+        <h3>Recursion-Factorial</h3>
+        <span>Open console to check output</span>
+    </div>
+
+    <script>
+
+        let inputData = 6;
+
+        const factorial = (number) => {
+            if (number == 0) {
+                return 1;
+            }
+            console.log("code flow: ", number)
+            return number * factorial(number - 1);
+        }
+
+        console.log(`Factorial of ${inputData} is: `, factorial(inputData));
+
+    </script>
+</body>
+
+</html>
