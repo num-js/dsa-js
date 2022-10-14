@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-JS</title>
+</head>
+
+<body>
+    <div align="center">
+        <h3>Binary Search in Iterative approach With Javascript</h3>
+        <p>(Open console to check output)</p>
+    </div>
+
+    <script>
+        let data = [10, 50, 25, 15, 5, 30];
+
+        const binarySearch = (searchElem) => {
+            let start = 0;
+            let end = data.length - 1;
+
+
+            while (start <= end) {
+                let mid = Math.floor((start + end) / 2);
+
+                if (searchElem == data[mid]) {
+                    return `Element ${searchElem} - found in the ${mid} position.`;
+                }
+
+                if (data[mid] < searchElem) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
+            }
+
+            return `Element ${searchElem} - not found in the Data.`;
+        }
+
+        console.log('Data: ', data);
+        console.log(binarySearch(30));
+        console.log(binarySearch(8));
+    </script>
+</body>
+
+</html>
