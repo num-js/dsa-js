@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA-JS</title>
+</head>
+
+<body>
+  <div align="center">
+    <h3>Selection Sort</h3>
+    <span>Open console to check output</span>
+  </div>
+  <script>
+    let data = [8, 50, 6, 15, 12, 2, 30, 20];
+
+    const selectionSort = (arr) => {
+      console.log("Un-Sorted Array: ", data);
+      console.log("Performing Selection Sort ..");
+
+      let minId;
+      for (let i = 0; i < arr.length; i++) {
+        minId = i;
+        for (let j = i + 1; j < arr.length; j++) {
+          if (arr[j] < arr[minId]) {
+            minId = j;
+          }
+        }
+
+        let temp = data[minId];
+        data[minId] = data[i];
+        data[i] = temp;
+      }
+      return data;
+    }
+
+    console.log("Sorted Array: ", selectionSort(data));
+  </script>
+</body>
+
+</html>
