@@ -6,10 +6,10 @@
 
 function debounceFunction(debFunction, delay) {
     let debTimer;
-    return function (params) {
+    return function (...args) {
         clearTimeout(debTimer);
         debTimer = setTimeout(() => {
-            debFunction(params);
+            debFunction(...args);
         }, delay);
     }
 }
@@ -21,5 +21,5 @@ function searchDataAPI(searchData) {
 const debounceFunctionCall = debounceFunction(searchDataAPI, 500);
 document.getElementById("searchInput").addEventListener('keyup', function (event) {
     const searchTxt = event.target.value;
-    debounceFunctionCall(searchTxt);
+    debounceFunctionCall(searchTxt, "abc");
 });
