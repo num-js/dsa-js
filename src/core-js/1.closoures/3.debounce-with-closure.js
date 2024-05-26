@@ -7,8 +7,12 @@
 function debounceFunction(debFunction, delay) {
     let debTimer;
     return function (...args) {
+        const ctx = this;
         clearTimeout(debTimer);
         debTimer = setTimeout(() => {
+            // apply method can be used here
+            // debFunction.apply(ctx, args);
+
             debFunction(...args);
         }, delay);
     }
